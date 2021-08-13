@@ -1,7 +1,13 @@
 module.exports = {
-  type: 'react-component',
+  type: "react-component",
   npm: {
     esModules: true,
-    umd: false
-  }
-}
+    umd: {
+      global: "clippy-react",
+      entry: "./src/clippy.js",
+      externals: {
+        react: "React",
+      },
+    },
+  },
+};

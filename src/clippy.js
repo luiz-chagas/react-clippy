@@ -32,3 +32,5 @@ export const ClippyRef = React.forwardRef(
     return <></>;
   }
 );
+
+export default ClippyRef;
