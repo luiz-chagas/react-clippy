@@ -1,9 +1,3 @@
-interface Props {
-  name?: "Clippy";
-  onLoad?: () => void;
-  ref: React.MutableRefObject<Clippy | null | undefined>;
-}
-
 const Animation = [
   "Congratulate",
   "LookRight",
@@ -51,6 +45,25 @@ const Animation = [
 ] as const;
 
 type Animation = typeof Animation[number];
+
+const Agents = [
+  "Bonzi",
+  "Clippy",
+  "F1",
+  "Genie",
+  "Genius",
+  "Links",
+  "Merlin",
+  "Peedy",
+  "Rocky",
+  "Rover",
+] as const;
+
+interface Props {
+  name?: typeof Agents[number];
+  onLoad?: () => void;
+  ref: React.MutableRefObject<Clippy | null | undefined>;
+}
 
 interface Clippy {
   animate: () => void;

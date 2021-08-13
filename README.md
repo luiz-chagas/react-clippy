@@ -29,7 +29,7 @@ export const Demo = () => {
   return (
     <>
       <h1>Hello World</h1>
-      <Clippy ref={clippy} onLoad={onClippyLoad}>
+      <Clippy name="Clippy" ref={clippy} onLoad={onClippyLoad}>
     </>;
   );
 }
