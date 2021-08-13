@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { load } from "./service";
 
-export const ClippyRef = React.forwardRef(
+export const Clippy = React.forwardRef(
   ({ name = "Clippy", onLoad = () => null }, ref) => {
     const clippy = useRef(null);
     // const [hasLoaded, setHasLoaded] = useState(false);
@@ -33,4 +33,4 @@ export const ClippyRef = React.forwardRef(
   }
 );
 
-export default ClippyRef;
+export default Clippy;

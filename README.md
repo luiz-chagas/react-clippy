@@ -1,16 +1,36 @@
-# clippy
+# Clippy React
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+React wrapper around [ClippyJS](https://github.com/pi0/clippyjs)
 
-Describe clippy here.
+## Installation
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+```bash
+npm install --save clippy-react
+```
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+## Usage
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+Currently there's only a `ref` version of the Clippy component. A declarative version is in the works.
+
+```tsx
+import { Clippy } from "clippy-react";
+
+export const Demo = () => {
+  const clippy = useRef<Clippy>();
+
+  const onClippyLoad = () => {
+    if(clippy.current){
+      clippy.current.show();
+      clippy.current.speak('Hello World');
+      clippy.current.play('GetTechy');
+    }
+  }
+
+  return (
+    <>
+      <h1>Hello World</h1>
+      <Clippy ref={clippy} onLoad={onClippyLoad}>
+    </>;
+  );
+}
+```

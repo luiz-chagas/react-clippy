@@ -65,4 +65,4 @@ interface Clippy {
   stopCurrent: () => void;
 }
 
-export function ClippyRef(props: React.PropsWithRef<Props>): React.ReactElement;
+export function Clippy(props: React.PropsWithRef<Props>): React.ReactElement;
