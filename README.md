@@ -34,3 +34,7 @@ export const Demo = () => {
   );
 }
 ```
+
+## Screenshot
+
+![Clippy](/Demo.png)
