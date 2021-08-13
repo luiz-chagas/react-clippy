@@ -1,7 +1,7 @@
 interface Props {
   name?: "Clippy";
   onLoad?: () => void;
-  ref: React.MutableRefObject<Clippy>;
+  ref: React.MutableRefObject<Clippy | null | undefined>;
 }
 
 const Animation = [

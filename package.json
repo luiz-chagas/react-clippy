@@ -1,6 +1,6 @@
 {
   "name": "clippy-react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Microsoft's Clippy React component",
   "main": "lib/clippy.js",
   "types": "./lib/clippy.d.ts",
