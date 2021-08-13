@@ -53,12 +53,13 @@ const Animation = [
 type Animation = typeof Animation[number];
 
 interface Clippy {
-  animate: (action: Animation) => void;
+  animate: () => void;
   animations: () => string[];
   gestureAt: (x: number, y: number) => void;
   hide: () => void;
   moveTo: (x: number, y: number) => void;
   show: () => void;
+  play: (action: Animation) => void;
   speak: (message: string) => void;
   stop: () => void;
   stopCurrent: () => void;
