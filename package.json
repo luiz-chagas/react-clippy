@@ -1,6 +1,6 @@
 {
   "name": "clippy-react",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Microsoft's Clippy React component",
   "main": "lib/clippy.js",
   "types": "./lib/clippy.d.ts",
@@ -16,17 +16,26 @@
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
     "start": "nwb serve-react-demo",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "test": "jest --collect-coverage",
+    "test:watch": "jest --watch --no-cache"
   },
   "dependencies": {
-    "clippyjs": "0.0.3"
+    "clippyjs": "0.0.3",
+    "identity-obj-proxy": "^3.0.0"
   },
   "peerDependencies": {
     "react": "16.x"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "babel-jest": "^27.0.6",
+    "babel-polyfill": "^6.26.0",
+    "jest": "^27.0.6",
+    "jest-environment-jsdom": "^27.0.6",
     "nwb": "0.25.x",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

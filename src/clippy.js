@@ -4,7 +4,6 @@ import { load } from "./service";
 export const Clippy = React.forwardRef(
   ({ name = "Clippy", onLoad = () => null }, ref) => {
     const clippy = useRef(null);
-    // const [hasLoaded, setHasLoaded] = useState(false);
 
     if (!ref) {
       throw Error("Clippy component requires a ref");
@@ -16,7 +15,6 @@ export const Clippy = React.forwardRef(
         clippy.current = agent;
         ref.current = agent;
         onLoad();
-        // setHasLoaded(true);
       } catch (err) {
         console.error(err);
       }

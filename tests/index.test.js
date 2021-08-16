@@ -1,23 +1,33 @@
-import expect from 'expect'
-import React from 'react'
-import {render, unmountComponentAtNode} from 'react-dom'
+import React, { createRef } from "react";
+import { render, waitFor } from "@testing-library/react";
 
-import Component from 'src/'
+import { Clippy } from "../src/clippy";
+import { load } from "../src/service";
 
-describe('Component', () => {
-  let node
+jest.mock("../src/service.js");
 
-  beforeEach(() => {
-    node = document.createElement('div')
-  })
+describe("Clippy", () => {
+  it("exists", () => {
+    expect(Clippy).toBeDefined();
+  });
 
-  afterEach(() => {
-    unmountComponentAtNode(node)
-  })
+  it("Calls load function", async () => {
+    const loadFn = jest.fn().mockResolvedValue("Clippy");
+    load.mockImplementation(loadFn);
 
-  it('displays a welcome message', () => {
-    render(<Component/>, node, () => {
-      expect(node.innerHTML).toContain('Welcome to React components')
-    })
-  })
-})
+    const ref = createRef();
+    render(<Clippy name="Clippy" ref={ref} onLoad={jest.fn()} />);
+    await waitFor(() => {
+      expect(loadFn).toHaveBeenCalled();
+    });
+  });
+
+  it("Calls onLoad after loading", async () => {
+    const onLoad = jest.fn();
+    const ref = createRef();
+    render(<Clippy name="Clippy" ref={ref} onLoad={onLoad} />);
+    await waitFor(() => {
+      expect(onLoad).toHaveBeenCalled();
+    });
+  });
+});
